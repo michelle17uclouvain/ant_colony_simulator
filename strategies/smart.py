@@ -1,10 +1,8 @@
 from environment import TerrainType, AntPerception
 from ant import AntAction, AntStrategy
 from common import Direction
-
 import random
 import math
-
 
 class SmartStrategy(AntStrategy):
 

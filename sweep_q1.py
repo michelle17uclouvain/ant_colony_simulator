@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 from utils import create_environment, add_ants
 
 ENV_FILE   = "envs/05_square_four_food_spots.txt"
-RUNS       = 10
+RUNS = 3
 ANT_COUNTS = list(range(1, 201, 20))
 
 
@@ -23,7 +23,7 @@ def run_once(ant_count: int):
     start      = time.time()
     step       = 0
     max_steps  = env.max_steps or 10_000
-    time_limit = env.time_limit or 300
+    time_limit = min(env.time_limit or 300, 60)
 
     while step < max_steps and (time.time() - start) < time_limit:
         env.update()

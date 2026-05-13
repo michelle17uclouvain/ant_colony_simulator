@@ -14,7 +14,7 @@ from utils import create_environment, add_ants
 
 ENV_FILE   = "envs/05_square_four_food_spots.txt"
 NB_ANTS    = 70
-RUNS       = 10
+RUNS = 3
 EVAP_RATES = list(np.linspace(0.500, 0.999, 20))
 
 
@@ -27,7 +27,7 @@ def run_once(evap_rate: float):
     start      = time.time()
     step       = 0
     max_steps  = env.max_steps or 10_000
-    time_limit = env.time_limit or 300
+    time_limit = min(env.time_limit or 300, 60)
 
     while step < max_steps and (time.time() - start) < time_limit:
         env.update()
