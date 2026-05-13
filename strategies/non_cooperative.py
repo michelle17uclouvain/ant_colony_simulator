@@ -10,7 +10,6 @@ class NonCooperativeStrategy(AntStrategy):
     """
     Non-cooperative ant strategy using individual memory.
     Each ant maintains a local map of colony and food positions
-    (relative to itself) without any communication with other ants.
     """
 
     def __init__(self):
@@ -57,7 +56,7 @@ class NonCooperativeStrategy(AntStrategy):
             return self._go(perception, perception.get_colony_direction())
         if self.colony_memory:
             dist = math.hypot(*self.colony_memory)
-            # Memory has drifted: we're "at" the colony but can't see it — reset and search
+            # Memory has drifted: we're "at" the colony but can't see it so we reset and search
             if dist < 2:
                 self.colony_memory = None
                 return self._random_walk(perception)

@@ -1,0 +1,14 @@
+# Environnement virtuel Python
+venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Figures générées
+figures/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
